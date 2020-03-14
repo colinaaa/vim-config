@@ -57,6 +57,10 @@
 - repo: mhinz/vim-startify
   hook_source: source $VIM_PATH/config/plugins/startify.vim
 
+- repo: luochen1990/rainbow
+  on_event: VimEnter
+  hook_add: let g:rainbow_active = 1
+
 
 # ==========================================
 # Completion and code analysis
