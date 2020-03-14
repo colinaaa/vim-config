@@ -8,9 +8,14 @@ nmap <leader><leader> :w<cr>
 nmap <leader>. <c-^>
 
 " clear highlighted search
-noremap <space> :set hlsearch! hlsearch?<cr>
+nnoremap <space> :set hlsearch! hlsearch?<cr>
 
 " map jk to esc
 inoremap jk <ESC>
 
+" Tab manage
+nnoremap <silent> sh :<C-U>tabprevious<CR>
+nnoremap <silent> sl :<C-U>tabnext<CR>
 
+" Window manage
+nnoremap <silent> se <C-w>o
