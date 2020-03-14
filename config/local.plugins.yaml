@@ -13,8 +13,9 @@
 - repo: romainl/vim-cool
   if: 0
 - { repo: wellle/visual-split.vim, if: 0 }
-
-- { repo: rafi/awesome-vim-colorschemes, if: 0 }
+- repo: rafi/awesome-vim-colorschemes
+  merged: 0
+  hook_add: let g:onedark_terminal_italics=1
 
 # Lazy Loading
 # ==========================================
@@ -50,12 +51,16 @@
 # ---------
 - { repo: rhysd/accelerated-jk, if: 0 }
 - { repo: haya14busa/vim-edgemotion, if: 0 }
-- { repo: t9md/vim-quickhl, if: 0}
-- { repo: cocopon/iceberg.vim }
-- repo: liuchengxu/eleline.vim
-  hook_add: let g:eleline_powerline_fonts = 1
+- { repo: t9md/vim-quickhl, if: 0 }
+
 - repo: mhinz/vim-startify
   hook_source: source $VIM_PATH/config/plugins/startify.vim
+
+- repo: itchyny/lightline.vim
+  hook_add: |
+    let g:lightline = {
+      \ 'colorscheme': 'onedark',
+      \ }
 
 - repo: luochen1990/rainbow
   on_event: VimEnter
