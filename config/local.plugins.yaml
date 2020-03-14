@@ -19,15 +19,9 @@
 
 # Lazy Loading
 # ==========================================
-- { repo: lervag/vimtex, on_ft: tex }
 
-- repo: octol/vim-cpp-enhanced-highlight
-  on_ft: cpp
-  hook_add: |
-    let g:cpp_class_scope_highlight = 1
-    let g:cpp_member_variable_highlight = 1
-    let g:cpp_class_decl_highlight = 1
-    let g:cpp_experimental_template_highlight = 1
+- repo: lervag/vimtex
+  on_ft: tex
 
 - repo: pearofducks/ansible-vim
   if: 0
@@ -45,6 +39,14 @@
 
 - repo: t9md/vim-choosewin
   if: 0
+
+# ==========================================
+# Language
+# ---------
+
+# loaded only on demand
+- repo: sheerun/vim-polyglot
+  hook_add: let g:polyglot_disabled = ['css', 'latex']
 
 # ==========================================
 # Interface
