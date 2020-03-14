@@ -77,6 +77,10 @@ if filereadable($VIM_PATH . '/config/local.vim')
 	call s:source_file('config/local.vim')
 endif
 
+if filereadable($VIM_PATH . '/config/local.mapping.vim')
+	call s:source_file('config/local.mapping.vim')
+endif
+
 set secure
 
 " vim: set ts=2 sw=2 tw=80 noet :
