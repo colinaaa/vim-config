@@ -1,0 +1,94 @@
+# PLUGINS
+# ===
+# See config/plugins/all.vim for plugin mappings and config/plugins/*.vim
+
+# Startup
+# -------
+- repo: itchyny/vim-gitbranch
+  if: 0
+- repo: itchyny/vim-parenmatch
+  if: 0
+- repo: thinca/vim-localrc
+  if: 0
+- repo: romainl/vim-cool
+  if: 0
+- { repo: wellle/visual-split.vim, if: 0 }
+
+- { repo: rafi/awesome-vim-colorschemes, if: 0 }
+
+# Lazy Loading
+# ==========================================
+- { repo: lervag/vimtex, on_ft: tex }
+
+- repo: octol/vim-cpp-enhanced-highlight
+  on_ft: cpp
+  hook_add: |
+    let g:cpp_class_scope_highlight = 1
+    let g:cpp_member_variable_highlight = 1
+    let g:cpp_class_decl_highlight = 1
+    let g:cpp_experimental_template_highlight = 1
+
+- repo: pearofducks/ansible-vim
+  if: 0
+
+# ==========================================
+# Commands
+# --------
+
+- { repo: Shougo/vinarise.vim, if: 0}
+  # use Shougo/deorise.nvim
+
+- { repo: guns/xterm-color-table.vim, if: 0}
+
+- { repo: cocopon/colorswatch.vim, if: 0}
+
+- repo: t9md/vim-choosewin
+  if: 0
+
+# ==========================================
+# Interface
+# ---------
+- { repo: rhysd/accelerated-jk, if: 0 }
+- { repo: haya14busa/vim-edgemotion, if: 0 }
+- { repo: t9md/vim-quickhl, if: 0}
+- { repo: cocopon/iceberg.vim }
+- repo: liuchengxu/eleline.vim
+  hook_add: let g:eleline_powerline_fonts = 1
+- repo: mhinz/vim-startify
+  hook_source: source $VIM_PATH/config/plugins/startify.vim
+
+
+# ==========================================
+# Completion and code analysis
+# ----------
+
+
+# ==========================================
+# Operators
+# ---------
+- repo: kana/vim-operator-user  # only autoload functions, lazy by nature
+  if: 0
+
+- repo: kana/vim-operator-replace
+  if: 0
+
+- repo: machakann/vim-sandwich
+  if: 0
+
+# alternative for vim-sandwich
+- repo: tpope/vim-surround
+  on_event: VimEnter
+
+# ==========================================
+# Text objects
+# ------------
+- repo: kana/vim-textobj-user  # only autoload functions, lazy by nature
+- { repo: terryma/vim-expand-region, if: 0 }
+
+- repo: osyo-manga/vim-textobj-multiblock
+  if: 0
+
+- repo: kana/vim-textobj-function
+  if: 0
+
+#  vim: set ts=2 sw=2 tw=80 et :
