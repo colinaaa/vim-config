@@ -41,12 +41,17 @@
   if: 0
 
 # ==========================================
-# Language
+# Language & Codes
 # ---------
 
 # loaded only on demand
 - repo: sheerun/vim-polyglot
   hook_add: let g:polyglot_disabled = ['css', 'latex']
+
+- repo: sbdchd/neoformat
+  hook_source: source $VIM_PATH/config/plugins/neoformat.vim
+  on_cmd: Neoformat
+
 
 # ==========================================
 # Interface
@@ -101,5 +106,8 @@
 
 - repo: kana/vim-textobj-function
   if: 0
+
+- repo: simnalamburt/vim-tiny-ime
+  build: 'bash ./build'
 
 #  vim: set ts=2 sw=2 tw=80 et :
