@@ -57,12 +57,18 @@
   if: has('nvim-0.3.2') || has('patch-8.0.1453')
   on_ft: [ go, gomod ]
   hook_add: |
-    let g:go_gopls_enabled = 0
+    let g:go_gopls_enabled = 1
     let g:go_code_completion_enabled = 0
     let g:go_doc_keywordprg_enabled = 1
     let g:go_def_mapping_enabled = 0
     let g:go_mod_fmt_autosave = 0
     let g:go_echo_go_info = 0
+    let g:go_list_type = "quickfix"
+    let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+    let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+    let g:go_metalinter_autosave = 1
+    let g:go_decls_includes = "func,type"
+    let g:go_auto_type_info = 1
     let g:go_highlight_array_whitespace_error = 1
     let g:go_highlight_chan_whitespace_error = 1
     let g:go_highlight_space_tab_error = 1
@@ -94,13 +100,23 @@
     let g:ale_sign_warning = 'ⁱ'
     let g:ale_maximum_file_size = 500000
     let g:ale_linters = {
-            \ 'go': ['gopls'],
+            \ 'go': ['gobuild'],
             \ }
     let g:ale_fixers = {
     \   '*': ['remove_trailing_lines', 'trim_whitespace'],
     \   'javascript': ['eslint'],
     \}
     let g:ale_fix_on_save = 1
+
+- repo: mattn/vim-lsp-settings
+  depends: vim-lsp
+  merged: 0
+  hook_add: |
+    let g:lsp_settings = {
+    \  'gopls': {
+    \    'disabled': 1,
+    \   }
+    \}
 
 # ==========================================
 # Interface

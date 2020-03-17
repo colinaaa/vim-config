@@ -138,6 +138,18 @@ if dein#tap('context.vim')
 endif
 
 if dein#tap('vim-go')
+	" run :GoBuild or :GoTestCompile based on the go file
+	function! s:build_go_files()
+	  let l:file = expand('%')
+	  if l:file =~# '^\f\+_test\.go$'
+	    call go#test#Test(0, 1)
+	  elseif l:file =~# '^\f\+\.go$'
+	    call go#cmd#Build(0)
+	  endif
+	endfunction
+
+	autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+
 	autocmd user_events FileType go
 		\   nmap <C-]> <Plug>(go-def)
 		\ | nmap <Leader>god  <Plug>(go-describe)
@@ -149,6 +161,18 @@ if dein#tap('vim-go')
 		\ | nmap <Leader>goe  <Plug>(go-referrers)
 		\ | nmap <Leader>gor  <Plug>(go-run)
 		\ | nmap <Leader>gov  <Plug>(go-vet)
+		\ | nmap <Leader>got  <Plug>(go-test)
+		\ | nmap <Leader>gob  :<C-u>call <SID>build_go_files()<CR>
+		\ | set autowrite
+		\ | command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+		\ | command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+		\ | command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+		\ | command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+
+	if dein#tap('dein.vim')
+		autocmd user_events FileType go
+			\ nnoremap <localleader>gd :<C-u>Denite decls<CR>
+	endif
 endif
 
 if dein#tap('iron.nvim')

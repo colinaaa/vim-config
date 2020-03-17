@@ -27,3 +27,7 @@ augroup lsp_user_plugin
 
 	autocmd CompleteDone * if pumvisible() == 0 | pclose | endif
 augroup END
+
+set foldmethod=expr
+  \ foldexpr=lsp#ui#vim#folding#foldexpr()
+  \ foldtext=lsp#ui#vim#folding#foldtext()
