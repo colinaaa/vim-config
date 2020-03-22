@@ -73,7 +73,6 @@
     let g:go_highlight_chan_whitespace_error = 1
     let g:go_highlight_space_tab_error = 1
     let g:go_highlight_trailing_whitespace_error = 1
-    let g:go_highlight_extra_types = 1
     let g:go_highlight_build_constraints = 1
     let g:go_highlight_extra_types = 1
     let g:go_highlight_fields = 1
@@ -86,7 +85,7 @@
     let g:go_highlight_operators = 1
     let g:go_highlight_string_spellcheck = 0
     let g:go_highlight_variable_declarations = 1
-    let g:go_highlight_variable_assignments = 1
+    let g:go_highlight_variable_assignments = 0
 
 - repo: dense-analysis/ale
   on_event: FileType
@@ -113,14 +112,6 @@
 - repo: mattn/vim-lsp-settings
   depends: vim-lsp
   merged: 0
-  hook_add: |
-    let g:lsp_settings = {
-    \  'gopls': {
-    \    'disabled': 1,
-    \   },
-    \  'clangd': {
-    \  }
-    \}
 
 # ==========================================
 # Interface
