@@ -100,7 +100,7 @@
     let g:ale_maximum_file_size = 500000
     let g:ale_linters = {
             \ 'go': ['gobuild'],
-            \ 'cpp': ['clangd', 'ccls', 'clangcheck', 'clangtidy', 'cppcheck']
+            \ 'cpp': ['clangd', 'ccls', 'clangcheck', 'cppcheck']
             \ }
     let g:ale_fixers = {
     \   '*': ['remove_trailing_lines', 'trim_whitespace'],
