@@ -5,3 +5,4 @@ set scrolloff=10
 set sidescrolloff=15
 set cmdheight=1
 
+let g:tex_flavor = 'tex'

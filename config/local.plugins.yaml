@@ -112,6 +112,26 @@
 - repo: mattn/vim-lsp-settings
   depends: vim-lsp
   merged: 0
+  hook_add: |
+    let g:lsp_settings = {
+    \   'texlab': {
+    \     'cmd': ['texlab'],
+    \     'whitelist': ['tex', 'plaintex', 'bib'],
+    \   }
+    \ }
+
+- repo: prabirshrestha/asyncomplete-tags.vim
+  if: executable('ctags')
+  depends: asyncomplete.vim
+  hook_source: |
+    autocmd User asyncomplete_setup call asyncomplete#register_source(
+      \ asyncomplete#sources#tags#get_source_options({
+      \ 'name': 'tags',
+      \ 'whitelist': ['*'],
+      \ 'blacklist': ['go', 'python', 'vim', 'denite-filter', 'clap_input', 'tex'],
+      \ 'completor': function('asyncomplete#sources#tags#completor'),
+      \ 'config': { 'max_file_size': 5000000 },
+      \ }))
 
 # ==========================================
 # Interface
