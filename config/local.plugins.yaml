@@ -128,7 +128,7 @@
       \ asyncomplete#sources#tags#get_source_options({
       \ 'name': 'tags',
       \ 'whitelist': ['*'],
-      \ 'blacklist': ['go', 'python', 'vim', 'denite-filter', 'clap_input', 'tex'],
+      \ 'blacklist': ['go', 'python', 'vim', 'denite-filter', 'clap_input', 'tex', 'javascript', 'typescript'],
       \ 'completor': function('asyncomplete#sources#tags#completor'),
       \ 'config': { 'max_file_size': 5000000 },
       \ }))
@@ -169,11 +169,11 @@
   if: 0
 
 - repo: machakann/vim-sandwich
-  if: 0
-
-# alternative for vim-sandwich
-- repo: tpope/vim-surround
-  on_event: VimEnter
+  on_map: { vonx: <Plug>(operator-sandwich- }
+  hook_add: |
+    let g:sandwich_no_default_key_mappings = 1
+    let g:operator_sandwich_no_default_key_mappings = 1
+    let g:textobj_sandwich_no_default_key_mappings = 1
 
 # ==========================================
 # Text objects
