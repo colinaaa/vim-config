@@ -192,7 +192,7 @@ set switchbuf=useopen,vsplit    " Jump to the first open window
 set backspace=indent,eol,start  " Intuitive backspacing in insert mode
 set diffopt=filler,iwhite       " Diff mode: show fillers, ignore whitespace
 set completeopt=menuone         " Always show menu, even for one item
-" set completeopt+=noselect       " Do not select a match in the menu
+set completeopt+=noselect       " Do not select a match in the menu
 
 if exists('+completepopup')
 	set completeopt+=popup

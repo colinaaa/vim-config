@@ -121,7 +121,7 @@
     \ }
 
 - repo: prabirshrestha/asyncomplete-tags.vim
-  if: executable('ctags')
+  if: 0
   depends: asyncomplete.vim
   hook_source: |
     autocmd User asyncomplete_setup call asyncomplete#register_source(
@@ -163,17 +163,21 @@
 # Operators
 # ---------
 - repo: kana/vim-operator-user  # only autoload functions, lazy by nature
-  if: 0
 
 - repo: kana/vim-operator-replace
   if: 0
 
 - repo: machakann/vim-sandwich
   on_map: { vonx: <Plug>(operator-sandwich- }
+  depends: vim-repeat
   hook_add: |
     let g:sandwich_no_default_key_mappings = 1
     let g:operator_sandwich_no_default_key_mappings = 1
     let g:textobj_sandwich_no_default_key_mappings = 1
+
+- repo: tpope/vim-surround
+
+- repo: tpope/vim-repeat
 
 # ==========================================
 # Text objects

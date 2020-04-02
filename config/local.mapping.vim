@@ -1,11 +1,11 @@
 " for Startify
-nmap <leader>st :Startify<cr>
+nnoremap <leader>st :Startify<cr>
 
 " saving
-nmap <leader><leader> :w<cr>
+nnoremap <leader><leader> :w<cr>
 
 " switch between current and last buffer
-nmap <leader>. <c-^>
+nnoremap <leader>. <c-^>
 
 " clear highlighted search
 nnoremap <space> :set hlsearch! hlsearch?<cr>
