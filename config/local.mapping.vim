@@ -19,3 +19,5 @@ nnoremap <silent> sl :<C-U>tabnext<CR>
 
 " Window manage
 nnoremap <silent> se <C-w>o
+
+tnoremap <Esc> <C-\><C-n>

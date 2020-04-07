@@ -26,6 +26,21 @@
 - repo: pearofducks/ansible-vim
   if: 0
 
+- repo: Olical/vim-scheme
+  depends: vim-sexp
+  on_cmd: SchemeConnect
+  on_ft:
+    - scheme
+    - racket
+
+- repo: guns/vim-sexp
+  depends: vim-sexp-mappings-for-regular-people
+  on_ft:
+    - scheme
+    - racket
+
+- repo: tpope/vim-sexp-mappings-for-regular-people
+
 # ==========================================
 # Commands
 # --------
@@ -104,7 +119,7 @@
             \ }
     let g:ale_fixers = {
     \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-    \   'javascript': ['eslint'],
+    \   'javascript': ['prettier_eslint', 'eslint'],
     \   'cpp': ['clangtidy']
     \}
     let g:ale_fix_on_save = 1
