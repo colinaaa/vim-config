@@ -37,3 +37,8 @@ function! CurrentLineI()
 endfunction
 
 iabbrev cosnt const
+
+set expandtab
+set fileencoding=utf-8
+set fileencodings=utf-8,prc
+lang en_US.UTF-8
