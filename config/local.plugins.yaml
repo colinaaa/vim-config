@@ -26,6 +26,16 @@
 - repo: pearofducks/ansible-vim
   if: 0
 
+- repo: JuliaEditorSupport/julia-vim
+  on_ft: julia
+  hook_add: let g:latex_to_unicode_tab = 0
+
+- repo: kdheepak/JuliaFormatter.vim
+  on_ft: julia
+  hook_add: |
+    nnoremap <silent> <localleader>jf :<C-u>call JuliaFormatter#Format(0)<CR>
+    vnoremap <localleader>jf :<C-u>call JuliaFormatter#Format(1)<CR>
+
 - repo: Olical/vim-scheme
   depends: vim-sexp
   on_cmd: SchemeConnect
@@ -206,7 +216,8 @@
 - repo: kana/vim-textobj-function
   if: 0
 
-- repo: simnalamburt/vim-tiny-ime
-  build: 'bash ./build'
+- repo: colinaaa/swim.vim
+  if: has('mac')
+  build: './build.sh'
 
 #  vim: set ts=2 sw=2 tw=80 et :
