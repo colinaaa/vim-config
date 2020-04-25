@@ -36,9 +36,13 @@ function! CurrentLineI()
   \ : 0
 endfunction
 
-iabbrev cosnt const
-
 set expandtab
 set fileencoding=utf-8
 set fileencodings=utf-8,prc
 lang en_US.UTF-8
+
+augroup ft_g
+	autocmd!
+	autocmd FileType tex setlocal spell
+	autocmd FileType javascript iabbrev cosnt const
+augroup END
