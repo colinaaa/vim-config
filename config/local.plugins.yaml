@@ -220,4 +220,9 @@
   if: has('mac')
   build: './build.sh'
 
+- repo: ianding1/leetcode.vim
+  on_cmd: LeetCodeList
+  hook_add: |
+    let g:leetcode_browser='chrome'
+
 #  vim: set ts=2 sw=2 tw=80 et :
