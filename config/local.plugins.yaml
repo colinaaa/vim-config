@@ -71,7 +71,7 @@
 
 # loaded only on demand
 - repo: sheerun/vim-polyglot
-  hook_add: let g:polyglot_disabled = ['css', 'latex']
+  hook_add: let g:polyglot_disabled = ['css', 'latex', 'opencl']
 
 - repo: sbdchd/neoformat
   hook_source: source $VIM_PATH/config/plugins/neoformat.vim
