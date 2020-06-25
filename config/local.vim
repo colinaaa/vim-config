@@ -44,7 +44,10 @@ lang en_US.UTF-8
 augroup ft_g
 	autocmd!
 	autocmd FileType tex setlocal spell spelllang=en_us,cjk
-	autocmd FileType javascript iabbrev cosnt const
+	autocmd FileType javascript,cpp iabbrev cosnt const
+	autocmd FileType cpp iabbrev slef self
+	autocmd FileType cpp iabbrev #i #include
+	autocmd FileType cpp iabbrev #d #define
 augroup END
 
 let g:python3_host_prog='/usr/local/bin/python3'
