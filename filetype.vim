@@ -28,6 +28,8 @@ augroup filetypedetect "{{{
 	autocmd BufNewFile,BufRead Tmuxfile,tmux/config setfiletype tmux
 	autocmd BufNewFile,BufRead Brewfile             setfiletype ruby
 	autocmd BufNewFile,BufRead *.cl                 setfiletype cool
+	autocmd BufNewFile,BufRead *.fl,*.flex,*.l,*.lm setfiletype lex
+	autocmd BufNewFile,BufRead *.y,*.ypp,*.ym       setfiletype yacc
 
 augroup END
 " }}}

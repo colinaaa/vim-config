@@ -49,6 +49,12 @@
     - scheme
     - racket
 
+- repo: justinmk/vim-syntax-extra
+  on_ft:
+    - c
+    - lex
+    - yacc
+
 - repo: tpope/vim-sexp-mappings-for-regular-people
 
 # ==========================================
