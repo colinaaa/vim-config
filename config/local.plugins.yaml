@@ -1,9 +1,9 @@
+--- # -------
 # PLUGINS
 # ===
 # See config/plugins/all.vim for plugin mappings and config/plugins/*.vim
 
 # Startup
-# -------
 - repo: itchyny/vim-gitbranch
   if: 0
 - repo: itchyny/vim-parenmatch
@@ -61,12 +61,11 @@
 # Commands
 # --------
 
-- { repo: Shougo/vinarise.vim, if: 0}
+- { repo: Shougo/vinarise.vim, if: 0 }
   # use Shougo/deorise.nvim
+- { repo: guns/xterm-color-table.vim, if: 0 }
 
-- { repo: guns/xterm-color-table.vim, if: 0}
-
-- { repo: cocopon/colorswatch.vim, if: 0}
+- { repo: cocopon/colorswatch.vim, if: 0 }
 
 - repo: t9md/vim-choosewin
   if: 0
@@ -77,7 +76,7 @@
 
 # loaded only on demand
 - repo: sheerun/vim-polyglot
-  hook_add: let g:polyglot_disabled = ['css', 'latex', 'opencl']
+  hook_add: let g:polyglot_disabled = ['css', 'latex', 'opencl', 'go']
 
 - repo: sbdchd/neoformat
   hook_source: source $VIM_PATH/config/plugins/neoformat.vim
@@ -86,7 +85,7 @@
 # Golang related
 - repo: fatih/vim-go
   if: has('nvim-0.3.2') || has('patch-8.0.1453')
-  on_ft: [ go, gomod ]
+  on_ft: [go, gomod]
   hook_add: |
     let g:go_gopls_enabled = 1
     let g:go_code_completion_enabled = 0
@@ -130,15 +129,17 @@
     let g:ale_sign_warning = 'ⁱ'
     let g:ale_maximum_file_size = 500000
     let g:ale_linters = {
-            \ 'go': ['gobuild'],
+            \ 'go': ['gobuild', 'gopls', 'govet'],
             \ 'cpp': ['clangd', 'ccls', 'clangcheck', 'cppcheck']
             \ }
     let g:ale_fixers = {
     \   '*': ['remove_trailing_lines', 'trim_whitespace'],
     \   'javascript': ['prettier_eslint', 'eslint'],
-    \   'cpp': ['clangtidy']
+    \   'cpp': ['clangtidy'],
+    \   'go': ['gofmt', 'goimports']
     \}
     let g:ale_fix_on_save = 1
+    let g:ale_go_gopls_options = '-remote=auto'
 
 - repo: mattn/vim-lsp-settings
   depends: vim-lsp
@@ -148,6 +149,9 @@
     \   'texlab': {
     \     'cmd': ['texlab'],
     \     'whitelist': ['tex', 'plaintex', 'bib'],
+    \   },
+    \   'gopls': {
+    \     'disabled': 1
     \   }
     \ }
 
@@ -163,6 +167,17 @@
       \ 'completor': function('asyncomplete#sources#tags#completor'),
       \ 'config': { 'max_file_size': 5000000 },
       \ }))
+
+- repo: yami-beta/asyncomplete-omni.vim
+  hook_source: |
+    autocmd User asyncomplete_setup call asyncomplete#register_source(
+      \ asyncomplete#sources#omni#get_source_options({
+      \ 'name': 'omni',
+      \ 'whitelist': ['*'],
+      \ 'blacklist': ['c', 'cpp', 'html'],
+      \ 'completor': function('asyncomplete#sources#omni#completor')
+      \  }))
+
 
 # ==========================================
 # Interface
@@ -184,16 +199,14 @@
   on_event: VimEnter
   hook_add: let g:rainbow_active = 1
 
-
 # ==========================================
 # Completion and code analysis
 # ----------
 
-
 # ==========================================
 # Operators
 # ---------
-- repo: kana/vim-operator-user  # only autoload functions, lazy by nature
+- repo: kana/vim-operator-user # only autoload functions, lazy by nature
 
 - repo: kana/vim-operator-replace
   if: 0
@@ -213,7 +226,7 @@
 # ==========================================
 # Text objects
 # ------------
-- repo: kana/vim-textobj-user  # only autoload functions, lazy by nature
+- repo: kana/vim-textobj-user # only autoload functions, lazy by nature
 - { repo: terryma/vim-expand-region, if: 0 }
 
 - repo: osyo-manga/vim-textobj-multiblock
@@ -224,7 +237,7 @@
 
 - repo: colinaaa/swim.vim
   if: has('mac')
-  build: './build.sh'
+  build: "./build.sh"
 
 - repo: ianding1/leetcode.vim
   on_cmd: LeetCodeList

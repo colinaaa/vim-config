@@ -48,6 +48,7 @@ augroup ft_g
 	autocmd FileType cpp iabbrev slef self
 	autocmd FileType cpp iabbrev #i #include
 	autocmd FileType cpp iabbrev #d #define
+	autocmd FileType go setlocal omnifunc=go#complete#Complete
 augroup END
 
 let g:python3_host_prog='/usr/local/bin/python3'
