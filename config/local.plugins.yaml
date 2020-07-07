@@ -140,6 +140,8 @@
     \}
     let g:ale_fix_on_save = 1
     let g:ale_go_gopls_options = '-remote=auto'
+    let g:ale_haskell_hlint_executable = 'hlint'
+    let g:ale_haskell_hie_executable = 'hie-wrapper --lsp'
 
 - repo: mattn/vim-lsp-settings
   depends: vim-lsp
