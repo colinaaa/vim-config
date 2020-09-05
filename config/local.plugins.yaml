@@ -80,6 +80,8 @@
 
 - repo: sbdchd/neoformat
   hook_source: source $VIM_PATH/config/plugins/neoformat.vim
+  hook_add: |
+    let g:neoformat_haskell_ormolu = { 'exe': 'ormolu', 'args': [] }
   on_cmd: Neoformat
 
 # Golang related

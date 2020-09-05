@@ -54,3 +54,5 @@ augroup END
 let g:python3_host_prog='/usr/local/bin/python3'
 
 let tex_conceal='abg'
+
+let g:swim_on_ft=['tex', 'markdown', '']
