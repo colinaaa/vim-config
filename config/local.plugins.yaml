@@ -20,6 +20,9 @@
 # Lazy Loading
 # ==========================================
 
+- repo: kylelaker/riscv.vim
+  merged: 0
+
 - repo: lervag/vimtex
   on_ft: tex
 
@@ -203,6 +206,14 @@
   on_event: VimEnter
   hook_add: let g:rainbow_active = 1
 
+- repo: octol/vim-cpp-enhanced-highlight
+  on_ft: 'cpp'
+  hook_add: |
+    let g:cpp_class_scope_highlight = 1
+    let g:cpp_member_variable_highlight = 1
+    let g:cpp_class_decl_highlight = 1
+    let g:cpp_posix_standard = 1
+    let g:cpp_experimental_template_highlight = 1
 # ==========================================
 # Completion and code analysis
 # ----------
