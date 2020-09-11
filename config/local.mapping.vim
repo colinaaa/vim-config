@@ -21,3 +21,5 @@ nnoremap <silent> sl :<C-U>tabnext<CR>
 nnoremap <silent> se <C-w>o
 
 tnoremap <Esc> <C-\><C-n>
+
+nnoremap <silent> <leader>f :Vista finder fzf<CR>

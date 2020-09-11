@@ -259,4 +259,11 @@
   hook_add: |
     let g:leetcode_browser='chrome'
 
+- repo: liuchengxu/vim-which-key
+  on_cmd: ['WhichKey', 'WhichKey!']
+  hook_add: |
+    nnoremap <silent> <leader> :WhichKey ','<CR>
+    nnoremap <silent> <localleader> :WhichKey ';'<CR>
+    set timeoutlen=500
+
 #  vim: set ts=2 sw=2 tw=80 et :
