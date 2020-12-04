@@ -81,6 +81,21 @@
 - repo: sheerun/vim-polyglot
   hook_add: let g:polyglot_disabled = ['css', 'latex', 'opencl', 'go']
 
+- repo: pangloss/vim-javascript
+  if: 0
+
+- repo: MaxMEllon/vim-jsx-pretty
+  if: 0
+
+- repo: HerringtonDarkholme/yats.vim
+  if: 0
+
+- repo: jparise/vim-graphql
+  if: 0
+
+- repo: heavenshell/vim-jsdoc
+  on_cmd: JsDoc
+
 - repo: sbdchd/neoformat
   hook_source: source $VIM_PATH/config/plugins/neoformat.vim
   hook_add: |
@@ -203,7 +218,6 @@
       \ }
 
 - repo: luochen1990/rainbow
-  on_event: VimEnter
   hook_add: let g:rainbow_active = 1
 
 - repo: octol/vim-cpp-enhanced-highlight
@@ -265,5 +279,9 @@
     nnoremap <silent> <leader> :WhichKey ','<CR>
     nnoremap <silent> <localleader> :WhichKey ';'<CR>
     set timeoutlen=500
+
+- repo: rhysd/clever-f.vim
+  hook_add: |
+    let g:clever_f_across_no_line=1
 
 #  vim: set ts=2 sw=2 tw=80 et :
